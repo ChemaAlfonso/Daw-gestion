@@ -1,0 +1,11 @@
+Basándonos en la gestión integral de la base de datos que hemos dejado en el foro de seguimiento del curso, hay que ampliar el mismo para hacer la gestión de los productos.
+
+La tabla de "productos" será la siguiente:
+
+producto_id int(11) PK AI
+codigo char(8)
+nombre varchar(32)
+stock decimal(10,3)
+precio decimal(10,3)
+
+Hay que hacer los archivos de productos, cproductosbd, productos_c y productos_v

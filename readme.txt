@@ -1,3 +1,3 @@
 ##Ejercicio sencillo de php para clase
 
---Instrucciones en "lectura/"
+--Instrucciones en "lectura/GestionProductosBD.txt"

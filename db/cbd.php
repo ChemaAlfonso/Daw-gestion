@@ -60,7 +60,7 @@ class CBD extends CConfiguracionBD
         // Creamos la sentencia a ejecutar.
         // Realmente no sería necesario.
         $stmt = $this->con->prepare($sql);
-
+        
         // Ejecutamos las sentencia.
         $stmt->execute();
         

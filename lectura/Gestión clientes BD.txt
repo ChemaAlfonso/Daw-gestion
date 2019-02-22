@@ -1,0 +1,17 @@
+﻿Basándonos en la gestión integral de la base de datos que hemos dejado en el foro de seguimiento del curso, hay que ampliar el mismo para hacer la gestión de los clientes.
+
+La tabla de "clientes" será la siguiente:
+
+cliente_id int(11) PK AI
+nombre varchar(32)
+cif char(9) UK
+direccion varchar(32)
+poblacion varchar(32)
+provincia varhcar(32)
+cp char(5)
+telefono char(11)
+email varchar(64) UK
+
+Hay que hacer los archivos de clientes, cclientesbd, clientes_c y clientes_v.
+
+En el formulario para dar de alta o modificar un cliente, el campo provincia los gestionaremos un "combobox desplegable" (select)

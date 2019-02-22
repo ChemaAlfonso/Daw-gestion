@@ -30,7 +30,6 @@ if ($option == MODIFICAR)
     
     if ($prd->Producto($producto_id))
     {
-        $crypt = new CCrypt;
         
         $codigo      = $prd->codigo; 
         $nombre      = $prd->nombre; 

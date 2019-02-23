@@ -4,7 +4,7 @@
 	<meta http-equiv="content-type" content="text/html" />
     <meta name="author" content="Javier Miras" />
     <meta name="author" content="Chema Alfonso" />
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
     
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -75,13 +75,24 @@ if ($option == MODIFICAR)
                         <input type="text" class="form-control" name="poblacion" value="<?php echo $poblacion; ?>" />
                     </div>
 
+                    <?php 
+                        require_once('../db/cprovinciasdb.php');
+                        $prov = new CProvinciasDB();
+                        $prov->Provincias();
+                    ?>
+
                     <div class="form-group">
                         <label for="provincia">Provincia</label>
-                        <input type="text" class="form-control" name="provincia" value="<?php echo $provincia; ?>" />
+                        <!--<input type="text" class="form-control" name="provincia" value="<?php echo $provincia; ?>" />-->
+                        <select class="form-control" name="provincia" id="provincia">
+                            <?php foreach($prov->filas as $index =>  $fila): ?>
+                                <option value="<?= $fila->provincia ?>" <?= $provincia == $fila->provincia ? 'selected' : ''?>> <?= $fila->provincia ?> </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="cp">Código postalp</label>
+                        <label for="cp">Código postal</label>
                         <input type="text" class="form-control" name="cp" value="<?php echo $cp; ?>" />
                     </div>
 
@@ -106,7 +117,7 @@ if ($option == MODIFICAR)
                 </form>
                 
                 <div class="row">
-                    <div class="col-2 offset-5 text-center mt-5 py-3  bg-primary rounded">
+                    <div class="col-2 offset-5 text-center mt-5 py-3  bg-primary rounded-pill">
                         <a class="text-white" href="../index.php?C=true">Volver</a>
                     </div>
                 </div>

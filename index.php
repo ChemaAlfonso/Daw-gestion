@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="autor" content="Chema Alfonso" >
+    <meta charset="UTF-8">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -22,7 +23,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="jumbotron text-center bg-primary text-white mb-5">
-                     <h1><i class="fas fa-strikethrough display-4"></i>GPDO - Sistema de Gestión con PDO</h1>
+                     <a class="text-white" href="index.php"><h1><i class="fas fa-strikethrough display-4"></i>GPDO - Sistema de Gestión con PDO</h1></a>
                 </div>
             </div>
         </div>

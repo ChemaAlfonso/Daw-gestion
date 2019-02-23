@@ -49,7 +49,9 @@ if ($option == MODIFICAR)
     <div class="container jumbotron mt-5">
         <div class="row">
             <div class="col-12">
+
                 <h1 class="text-right text-primary mb-3">Usuario</h1>
+                
                 <form action="usuarios_c.php?id=<?php echo $usuario_id; ?>&opt=<?php echo $option; ?>" method="post">
 
                     <div class="form-group">
@@ -82,10 +84,11 @@ if ($option == MODIFICAR)
                 </form>
                 
             <div class="row">
-                <div class="col-2 offset-5 text-center mt-5 py-3  bg-primary rounded">
+                <div class="col-2 offset-5 text-center mt-5 py-3  bg-primary rounded-pill">
                     <a class="text-white" href="../index.php?C=true">Volver</a>
                 </div>
             </div>
+
         </div>
     </div>
 </div>

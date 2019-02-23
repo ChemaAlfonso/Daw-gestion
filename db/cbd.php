@@ -21,6 +21,9 @@ class CBD extends CConfiguracionBD
                       
             // Nos conectamos al servidor de base de datos (MySQL).
             $this->con = new PDO($cadena, $this->getUsuario(), $this->getContrasena());
+
+            //Seteo de caracteres de la base de datos a UTF-8
+            $this->con -> exec("SET CHARACTER SET utf8");
             
             // Ponemos el modo de erro de PDO a exception.
             $this->con->setAttribute(PDO::ATTR_ERRMODE, 

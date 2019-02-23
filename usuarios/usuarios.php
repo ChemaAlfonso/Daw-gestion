@@ -84,7 +84,7 @@
 
 
     <div class="row">
-        <div class="col-2 offset-5 text-center mt-5 py-3  bg-primary rounded">
+        <div class="col-2 offset-5 text-center mt-5 py-3  bg-primary rounded-pill">
             <a class="text-white" href="./index.php">Volver</a>
         </div>
     </div>

@@ -1,4 +1,4 @@
-##Ejercicio sencillo de php para clase
+##Ejercicio de php para clase
 
 --Instrucciones en "lectura/GestionProductosBD.txt"
 --Instrucciones en "lectura/Gestión clientes BD.txt"

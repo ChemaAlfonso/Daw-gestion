@@ -2,9 +2,13 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html" />
-	<meta name="author" content="Javier Miras by Chema Alfonso" />
+    <meta name="author" content="Javier Miras" />
+    <meta name="author" content="Chema Alfonso" />
     <meta charset="utf-8" />
     
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        
 	<title>Mantenimiento clientes</title>
 </head>
 
@@ -15,14 +19,14 @@ require_once('../config/constantes.inc.php');
 $option     = filter_input(INPUT_GET, 'opt');
 $cliente_id = filter_input(INPUT_GET, 'id'); 
 
-$nombre    = '';
-$cif    = '';
+$nombre       = '';
+$cif          = '';
 $direccion    = '';
 $poblacion    = '';
 $provincia    = '';
-$cp    = '';
-$telefono    = '';
-$email    = '';
+$cp           = '';
+$telefono     = '';
+$email        = '';
 
 // Si estamos modificando
 if ($option == MODIFICAR)
@@ -46,38 +50,71 @@ if ($option == MODIFICAR)
 ?>
 
 <body>
-<form action="clientes_c.php?id=<?php echo $cliente_id; ?>&opt=<?php echo $option; ?>" method="post">
-    <label for="nombre">Nombre</label>
-    <input type="text" name="nombre" value="<?php echo $nombre; ?>" />
-    <br />
-    <label for="cif">cif</label>
-    <input type="text" name="cif" value="<?php echo $cif; ?>" />
-    <br />
-    <label for="direccion">direccion</label>
-    <input type="text" name="direccion" value="<?php echo $direccion; ?>" />
-    <br />
-    <label for="poblacion">poblacion</label>
-    <input type="text" name="poblacion" value="<?php echo $poblacion; ?>" />
-    <br />
-    <label for="provincia">provincia</label>
-    <input type="text" name="provincia" value="<?php echo $provincia; ?>" />
-    <br />
-    <label for="cp">cp</label>
-    <input type="text" name="cp" value="<?php echo $cp; ?>" />
-    <br />
-    <label for="telefono">telefono</label>
-    <input type="text" name="telefono" value="<?php echo $telefono; ?>" />
-    <br />
-    <label for="email">email</label>
-    <input type="email" name="email" value="<?php echo $email; ?>" />
-    <br />
-    <input type="submit" value="Aceptar" />
-    
-    <input type="button" 
-           value="Cancelar" 
-           onclick="location.href='clientes.php'" />
-            
-</form>
+    <div class="container jumbotron mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-right text-primary mb-3">Cliente</h1>
+                <form action="clientes_c.php?id=<?php echo $cliente_id; ?>&opt=<?php echo $option; ?>" method="post">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" name="nombre" value="<?php echo $nombre; ?>" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cif">Cif</label>
+                        <input type="text" class="form-control" name="cif" value="<?php echo $cif; ?>" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direccion">Direccion</label>
+                        <input type="text" class="form-control" name="direccion" value="<?php echo $direccion; ?>" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="poblacion">Poblacion</label>
+                        <input type="text" class="form-control" name="poblacion" value="<?php echo $poblacion; ?>" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="provincia">Provincia</label>
+                        <input type="text" class="form-control" name="provincia" value="<?php echo $provincia; ?>" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cp">Código postalp</label>
+                        <input type="text" class="form-control" name="cp" value="<?php echo $cp; ?>" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Telefono</label>
+                        <input type="text" class="form-control" name="telefono" value="<?php echo $telefono; ?>" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" value="<?php echo $email; ?>" />
+                    </div>
+
+                    <input class="btn btn-success" role="button" type="submit" value="Aceptar" />
+                    
+                    <input type="button"
+                    class="btn btn-danger" 
+                    value="Cancelar" 
+                    role="button"
+                    onclick="location.href='clientes.php'" />
+                    
+                </form>
+                
+                <div class="row">
+                    <div class="col-2 offset-5 text-center mt-5 py-3  bg-primary rounded">
+                        <a class="text-white" href="../index.php?C=true">Volver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 </body>
 </html>

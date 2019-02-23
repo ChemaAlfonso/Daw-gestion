@@ -36,6 +36,6 @@ else
     
 }
 
-header('location: clientes.php');
+header('location: ../index.php?C=true');
 
 ?>

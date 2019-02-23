@@ -35,6 +35,6 @@ else
     
 }
 
-header('location: usuarios.php');
+header('location: ../index.php?U=true');
 
 ?>

@@ -30,6 +30,6 @@ else
     
 }
 
-header('location: productos.php');
+header('location: ../index.php?P=true');
 
 ?>

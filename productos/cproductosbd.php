@@ -1,6 +1,13 @@
 <?php
 
-require_once('../db/cbd.php');
+if (is_file('../db/cbd.php')){
+        
+    require_once('../db/cbd.php');
+
+}else {
+    require_once('./db/cbd.php');
+
+}
 
 class CProductosBD extends CBD
 {

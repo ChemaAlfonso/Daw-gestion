@@ -1,6 +1,9 @@
 <?php
-
-require_once('../db/cbd.php');
+ if (is_file($web = '../db/cbd.php')){
+    require_once($web);
+}else {
+    require_once('./db/cbd.php');
+}
 
 class CClientesBD extends CBD
 {

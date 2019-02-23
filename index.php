@@ -20,14 +20,14 @@
 <body>
     
 <header class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="jumbotron text-center bg-primary text-white mb-5">
-                     <a class="text-white" href="index.php"><h1><i class="fas fa-strikethrough display-4"></i>GPDO - Sistema de Gestión con PDO</h1></a>
-                </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="jumbotron text-center bg-primary text-white mb-5">
+                    <a class="text-white" href="index.php"><h1><i class="fas fa-strikethrough display-4"></i>GPDO - Sistema de Gestión con PDO</h1></a>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
 <?php
 
@@ -44,7 +44,7 @@
 
 <div class="row">
     <div class="col-12 text-right text-primary px-5">
-        <p>Por: Chema Alfonso</p>
+        <a href="https://github.com/ChemaAlfonso/Daw-gestion.git">Por: Chema Alfonso</a>
     </div>
 </div>
 

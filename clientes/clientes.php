@@ -71,7 +71,7 @@
                     {
                     ?>
                         <tr>
-                            <td colspan="5">No hay clientes.</td>
+                            <td colspan="12">No hay clientes.</td>
                         </tr>
                     <?php
                     } // if Clientes.    

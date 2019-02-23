@@ -67,7 +67,7 @@
                 ?>
 
                     <tr>
-                        <td colspan="5">No hay usuarios.</td>
+                        <td colspan="12">No hay usuarios.</td>
                     </tr>
 
                 <?php

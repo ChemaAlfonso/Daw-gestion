@@ -76,7 +76,7 @@ if ($option == MODIFICAR)
                         <input type="button" 
                             class="btn btn-danger" 
                             value="Cancelar" 
-                            onclick="location.href='productos.php'" />
+                            onclick="location.href='../index.php?P=true'" />
                                 
                     </form>
                 

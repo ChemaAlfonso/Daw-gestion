@@ -79,7 +79,7 @@ if ($option == MODIFICAR)
                     <input type="button"
                         class="btn btn-danger"  
                         value="Cancelar" 
-                        onclick="location.href='usuarios.php'" />
+                        onclick="location.href='../index.php?U=true'" />
                             
                 </form>
                 

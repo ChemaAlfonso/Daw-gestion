@@ -112,7 +112,7 @@ if ($option == MODIFICAR)
                     class="btn btn-danger" 
                     value="Cancelar" 
                     role="button"
-                    onclick="location.href='clientes.php'" />
+                    onclick="location.href='../index.php?C=true'" />
                     
                 </form>
                 

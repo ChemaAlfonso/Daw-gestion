@@ -1,10 +1,11 @@
-﻿##Ejercicio de php para clase
+﻿## Ejercicio de php DAW
 
 -- 1. Instrucciones en "lectura/GestionProductosBD.txt"
 -- 2. Instrucciones en "lectura/Gestión clientes BD.txt"
 -- 3. Añadir casilla para recordar sesión anterior.
 
-##Nuevos cambios
+## Nuevos cambios
+
 - fix en botones de cancelar al insertar nuevos registros.
 - Añadida restriccion unique a usuarios email.
 - Corregidas redirecciones al volver en modificacion de productos y clientes.

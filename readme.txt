@@ -12,7 +12,7 @@
 - Validaciones HTML5 en productos, clientes y usuarios.
 - Modificacion de logout.
 - Añadido boton de recordar usuario.
-- Creada cookies para memorizar login.
+- Creada cookie para memorizar login.
 - Modificacion de posicion del enlace de créditos al header.
 - Añadido panel de bienvenida.
 - Implementado SweetAlert

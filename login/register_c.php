@@ -24,6 +24,8 @@ if ($register->Register()){
         $_SESSION['logedin']  = true;
         $_SESSION['logstart'] = time();
         $_SESSION['usuario']  = $usuario;
+
+        $_SESSION['contador'] = 0;
         
         header('location:../index.php');
         die();

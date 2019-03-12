@@ -3,20 +3,29 @@ session_start();
 
 require_once('biblioteca/biblioteca.inc.php');
 
+if (isset($_SESSION['usuario'])){
+    $usuario = $_SESSION['usuario'];
+} else {
+    $usuario = null;
+}
+
 /* Seteo de la cookie de sesion si se requiere */
-if (isset($_SESSION['usuario']) && isset($_SESSION['recordar'])){
+if (isset($usuario) && isset($_SESSION['recordar'])){
+
+    
 
     
     if ($_SESSION['recordar'] === true){
 
-        setcookie("userLogin",$_SESSION['usuario'], $_SESSION['logstart']+604800);
+        setcookie("userLogin",$usuario, $_SESSION['logstart']+604800);
 
     } elseif ($_SESSION['recordar'] === false)  {
 
-        setcookie("userLogin",$_SESSION['usuario'], $_SESSION['logstart']-604800);
+        setcookie("userLogin",$usuario, $_SESSION['logstart']-604800);
         unset($_COOKIE['userLogin']);
-        
+
     }
+    
 
     unset($_SESSION['recordar']);
     
@@ -39,17 +48,28 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['recordar'])){
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- estilos -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles.css">
+        
+    <!-- SweetAlert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
     <title>Gestión SGPDO</title>
 </head>
 <body>
+<?php
 
+if (!empty($usuario) && isset($_SESSION['contador']) && $_SESSION['contador'] < 1){
+    echo "<script>swal('Bienvenido $usuario!','Me alegra verte por aquí!', 'success')</script>";
+    $_SESSION['contador']++;
+}
+
+?>
+
+<!-- Main Header -->
 <header class="container-fluid">
     <div class="row">
         <div class="col-12">
         
-            <!-- Main Header -->
             <div class="jumbotron text-center bg-primary text-white mb-5">
                 <div class="row">
                     <div class="col-12">
@@ -73,22 +93,21 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['recordar'])){
     <div class="row">
 
         <div class="col-3 offset-9 text-center">
-            <?= !empty($_SESSION['usuario']) ?  "Bienvenido ".$_SESSION['usuario'] : "Bienvenido Desconocido" ;?>
+            <?= !empty($usuario) ?  "Bienvenido <span class='text-primary'>".$usuario."</span>" : "Bienvenido <span class='text-primary'>Desconocido</span>" ;?>
         </div>
 
         <div class="col-3 offset-9 text-center">
-            <a href="login/logout.php"> <?= !empty($_SESSION['usuario']) ?  'Cerrar sesión' : '' ;?> </a>
+            <a href="login/logout.php" class="text-white d-block mt-3"> <?= !empty($usuario) ?  "<span class=' btn btn-danger'>Cerrar sesión</span>" : '' ;?> </a>
         </div>
 
     </div>
 </div>
-    
 
 <?php
 
 //Controlador frontal
 
-if (empty($_SESSION['usuario']) && empty($_GET['reg']))
+if (empty($usuario) && empty($_GET['reg']))
 {
     require_once "login/login.php";
 }
@@ -118,7 +137,7 @@ else {
 $sessionError = !empty($_SESSION['error']) ? filter_var($_SESSION['error'], FILTER_SANITIZE_STRING) : '';
 
 if ($sessionError){
-    echo "<script>alert('$sessionError')</script>";
+    echo "<script>swal('Ups...','Error, $sessionError', 'error')</script>";
     $_SESSION['error'] = null;
 
 }
@@ -130,6 +149,8 @@ if ($sessionError){
    
     <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    
+
 </body>
 </html>
 

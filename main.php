@@ -2,7 +2,7 @@
     <div class="row text-center mt-5">
 
         <div class="col-12 col-lg-4 my-4">
-            <i class="far fa-address-card display-1 text-primary mb-3"></i>
+            <i class="far fa-address-card display-1 text-primary mb-3 shadowed"></i>
            
             <div class="row">
                 <div class="col-12">
@@ -13,7 +13,7 @@
 
         <div class="col-12 col-lg-4 my-4">
 
-            <i class="fas fa-box-open display-1 text-primary mb-3"></i>
+            <i class="fas fa-box-open display-1 text-primary mb-3 shadowed"></i>
 
             <div class="row">
                 <div class="col-12">
@@ -24,7 +24,7 @@
 
         <div class="col-12 col-lg-4 my-4">
             
-            <i class="fas fa-users display-1 text-primary mb-3"></i>
+            <i class="fas fa-users display-1 text-primary mb-3 shadowed"></i>
             
             <div class="row">
                 <div class="col-12">

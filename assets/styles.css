@@ -19,3 +19,12 @@ html {
       font-size: 1.6rem;
     }
   }
+
+.shadowed{
+    text-shadow: 10px 10px 10px #ccc;
+  }
+
+  a:hover{
+    text-decoration: none;
+    color: #335588 ;
+  }

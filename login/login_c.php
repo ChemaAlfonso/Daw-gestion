@@ -21,7 +21,11 @@ if ($login->Logueado())
     } else {
         $_SESSION['recordar'] = false;
     }
+
+    $_SESSION['contador'] = 0;
     
+    
+
     header('location:../index.php');
     die();
 }

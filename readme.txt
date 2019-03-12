@@ -13,9 +13,12 @@
 - Modificacion de logout.
 - Añadido boton de recordar usuario.
 - Creada cookies para memorizar login.
-- Mejoras para lectura del codigo.
 - Modificacion de posicion del enlace de créditos al header.
 - Añadido panel de bienvenida.
+- Implementado SweetAlert
+- Modificacion de estilos tarjeta de bienvenida
+- Optimizaciones de acceso a los recursos
+- Mejoras para lectura de codigo.
 
 
                     +++++

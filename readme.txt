@@ -17,6 +17,8 @@
 - Añadido panel de bienvenida.
 - Implementado SweetAlert
 - Modificacion de estilos tarjeta de bienvenida
+- Modificado path de estilos
+- Añadidas sombras en algunos iconos
 - Optimizaciones de acceso a los recursos
 - Mejoras para lectura de codigo.
 

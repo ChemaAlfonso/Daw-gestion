@@ -13,8 +13,6 @@ CREATE TABLE IF NOT EXISTS usuarios(
     CONSTRAINT pk_pkusuarios PRIMARY KEY (usuario_id)
 )Engine=InnoDB;
 
-INSERT INTO `usuarios` (`usuario_id`, `usuario`, `contrasena`, `nombre`, `email`) VALUES (NULL, 'admin', 'admin', 'admin', 'admin@admin.com');
-
 
 /* Tabla productos */
 CREATE TABLE IF NOT EXISTS productos(

@@ -6,12 +6,20 @@
             
                 <div class="form-group">
                     <label>Usuario/Email</label>
-                    <input type="text" class="form-control" name="usuario" />
+                    <input type="text" class="form-control" name="usuario" value="<?= !empty($_COOKIE['userLogin']) ? $_COOKIE['userLogin'] : '';  ?>"/>
                 </div>
                     
                 <div class="form-group">
                     <label>Contraseña</label>
                     <input type="password" class="form-control" name="contrasena" />
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"> Recordar &nbsp;
+                            <input type="checkbox" value="true" name="recordar" <?= !empty($_COOKIE['userLogin']) ? 'checked' : '';  ?>>
+                        </div>
+                    </div>
                 </div>
                     
                 <div class="form-group text-center">

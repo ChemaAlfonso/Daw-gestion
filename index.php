@@ -3,6 +3,24 @@ session_start();
 
 require_once('biblioteca/biblioteca.inc.php');
 
+/* Seteo de la cookie de sesion si se requiere */
+if (isset($_SESSION['usuario']) && isset($_SESSION['recordar'])){
+
+    
+    if ($_SESSION['recordar'] === true){
+
+        setcookie("userLogin",$_SESSION['usuario'], $_SESSION['logstart']+604800);
+
+    } elseif ($_SESSION['recordar'] === false)  {
+
+        setcookie("userLogin",$_SESSION['usuario'], $_SESSION['logstart']-604800);
+        unset($_COOKIE['userLogin']);
+        
+    }
+
+    unset($_SESSION['recordar']);
+    
+}
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +44,7 @@ require_once('biblioteca/biblioteca.inc.php');
     <title>Gestión SGPDO</title>
 </head>
 <body>
-    
+
 <header class="container-fluid">
     <div class="row">
         <div class="col-12">
@@ -53,42 +71,46 @@ require_once('biblioteca/biblioteca.inc.php');
 <!-- Panel bienvenida -->
 <div class="container-fluid">
     <div class="row">
+
         <div class="col-3 offset-9 text-center">
             <?= !empty($_SESSION['usuario']) ?  "Bienvenido ".$_SESSION['usuario'] : "Bienvenido Desconocido" ;?>
         </div>
+
         <div class="col-3 offset-9 text-center">
             <a href="login/logout.php"> <?= !empty($_SESSION['usuario']) ?  'Cerrar sesión' : '' ;?> </a>
         </div>
+
     </div>
 </div>
     
 
 <?php
-    //Controlador frontal
 
-    if (empty($_SESSION['usuario']) && empty($_GET['reg']))
-    {
-        require_once "login/login.php";
-    }
-    elseif (!empty($_GET['reg']))
-    {
-        require_once "login/register.php";
-    }
-    elseif (isset($_GET['P']))
-    {
-        require_once "productos/productos.php";
-    }
-    elseif (isset($_GET['U']))
-    {
-        require_once "usuarios/usuarios.php";
-    }
-    elseif (isset($_GET['C']))
-    {
-        require_once "clientes/clientes.php";
-    }
-    else {
-        require_once "main.php";
-    }
+//Controlador frontal
+
+if (empty($_SESSION['usuario']) && empty($_GET['reg']))
+{
+    require_once "login/login.php";
+}
+elseif (!empty($_GET['reg']))
+{
+    require_once "login/register.php";
+}
+elseif (isset($_GET['P']))
+{
+    require_once "productos/productos.php";
+}
+elseif (isset($_GET['U']))
+{
+    require_once "usuarios/usuarios.php";
+}
+elseif (isset($_GET['C']))
+{
+    require_once "clientes/clientes.php";
+}
+else {
+    require_once "main.php";
+}
     
 
 

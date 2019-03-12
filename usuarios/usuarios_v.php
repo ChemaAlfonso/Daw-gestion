@@ -56,22 +56,22 @@ if ($option == MODIFICAR)
 
                     <div class="form-group">
                         <label for="usuario">Usuario</label>
-                        <input type="text" class="form-control" name="usuario" value="<?php echo $usuario; ?>" />
+                        <input type="text" class="form-control" name="usuario" value="<?php echo $usuario; ?>" required />
                     </div>
 
                     <div class="form-group">
                         <label for="contrasena">Contraseña</label>
-                        <input type="password" class="form-control" name="contrasena" value="<?php echo $contrasena; ?>" />
+                        <input type="password" class="form-control" name="contrasena" value="<?php echo $contrasena; ?>" required />
                     </div>
 
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" value="<?php echo $nombre; ?>" />
+                        <input type="text" class="form-control" name="nombre" value="<?php echo $nombre; ?>" required />
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" name="email" value="<?php echo $email; ?>" />
+                        <input type="email" class="form-control" name="email" value="<?php echo $email; ?>" required />
                     </div>
 
                     <input class="btn btn-success" role="button"  type="submit" value="Aceptar" />
@@ -85,7 +85,7 @@ if ($option == MODIFICAR)
                 
             <div class="row">
                 <div class="col-2 offset-5 text-center mt-5 py-3  bg-primary rounded-pill">
-                    <a class="text-white" href="../index.php?C=true">Volver</a>
+                    <a class="text-white" href="../index.php?U=true">Volver</a>
                 </div>
             </div>
 

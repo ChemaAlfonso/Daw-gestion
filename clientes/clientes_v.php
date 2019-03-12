@@ -93,17 +93,17 @@ if ($option == MODIFICAR)
 
                     <div class="form-group">
                         <label for="cp">Código postal</label>
-                        <input type="text" class="form-control" name="cp" value="<?php echo $cp; ?>" />
+                        <input type="text" class="form-control" name="cp" value="<?php echo $cp; ?>"  required/>
                     </div>
 
                     <div class="form-group">
                         <label for="telefono">Telefono</label>
-                        <input type="text" class="form-control" name="telefono" value="<?php echo $telefono; ?>" />
+                        <input type="text" class="form-control" name="telefono" value="<?php echo $telefono; ?>"  required/>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" name="email" value="<?php echo $email; ?>" />
+                        <input type="email" class="form-control" name="email" value="<?php echo $email; ?>" required />
                     </div>
 
                     <input class="btn btn-success" role="button" type="submit" value="Aceptar" />

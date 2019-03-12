@@ -9,9 +9,11 @@ CREATE TABLE IF NOT EXISTS usuarios(
     usuario         varchar(50),
     contrasena      varchar(255),
     nombre          varchar(125),
-    email           varchar(150),
+    email           varchar(150) UNIQUE,
     CONSTRAINT pk_pkusuarios PRIMARY KEY (usuario_id)
 )Engine=InnoDB;
+
+INSERT INTO `usuarios` (`usuario_id`, `usuario`, `contrasena`, `nombre`, `email`) VALUES (NULL, 'admin', 'admin', 'admin', 'admin@admin.com');
 
 
 /* Tabla productos */

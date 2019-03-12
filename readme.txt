@@ -1,7 +1,8 @@
 ﻿##Ejercicio de php para clase
 
---Instrucciones en "lectura/GestionProductosBD.txt"
---Instrucciones en "lectura/Gestión clientes BD.txt"
+-- 1. Instrucciones en "lectura/GestionProductosBD.txt"
+-- 2. Instrucciones en "lectura/Gestión clientes BD.txt"
+-- 3. Añadir casilla para recordar sesión anterior.
 
 ##Nuevos cambios
 - fix en botones de cancelar al insertar nuevos registros.

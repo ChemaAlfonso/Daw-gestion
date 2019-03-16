@@ -3,6 +3,7 @@
 -- 1. Instrucciones en "lectura/GestionProductosBD.txt"
 -- 2. Instrucciones en "lectura/Gestión clientes BD.txt"
 -- 3. Añadir casilla para recordar sesión anterior.
+-- 4. Instrucciones en "lectura/GestionProveedores"
 
 ## Nuevos cambios
 

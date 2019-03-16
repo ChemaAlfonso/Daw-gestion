@@ -1,0 +1,25 @@
+Ampliar uERP proveedores
+
+Hay que ampliar nuestro uERP para hacer la gestión de los proveedores.
+
+La tabla de "proveedores" será la siguiente:
+
+proveedor_id int(11) PK AI
+nombre varchar(32)
+cif char(9) UK
+direccion varchar(32)
+poblacion varchar(32)
+provincia varhcar(32)
+cp char(5)
+telefono char(11)
+email varchar(64) UK
+
+Hay que hacer los archivos de clientes, cproveedoresbd, proveedores_c y proveedors_v.
+
+La tabla de productos hay que ampliarla con el campo:
+
+proveedor_id int(11)
+
+donde se almacenará el proveedor que suministra ese producto.
+
+En el formulario para dar de alta o modificar un producto, el campo proveedor los gestionaremos un "combobox desplegable" (select).

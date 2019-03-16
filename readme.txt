@@ -7,7 +7,11 @@
 
 ## Nuevos cambios
 
+- Corrección de error de borrado continuo del ultimo registro.
+- Añadida restriccion de borrado en cascada para proveedores.
+- Aviso personalizado para borrado de proveedores.
 - Creada nueva tabla proveedores en la BBDD.
+- Corregido bug de borrado de proveedores con productos.
 - Creada nueva carpeta de proveedores con archivos de proveedores.
 - Modificada consulta de productos a consulta multitabla.
 - Modificada vista de productos.
@@ -64,4 +68,7 @@
 
 ## Errores conocidos en solución
 
-- Borrado con Sweet Alert siempre borra el ultimo registro.
+
+## Errores conocidos solucionados.
+
+- Borrado con Sweet Alert, siempre borra el ultimo registro.

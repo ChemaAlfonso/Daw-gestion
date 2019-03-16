@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS productos(
     stock       decimal(10,3),
     precio      decimal(10,3),
     CONSTRAINT pk_pkproductos PRIMARY KEY (producto_id),
-    CONSTRAINT fk_productos_proveedores FOREIGN KEY (proveedor_id) REFERENCES proveedores(proveedor_id)
+    CONSTRAINT fk_productos_proveedores FOREIGN KEY (proveedor_id) REFERENCES proveedores(proveedor_id) ON DELETE CASCADE
 )Engine=InnoDB DEFAULT CHARSET=latin1;
 
 

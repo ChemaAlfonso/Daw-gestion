@@ -1,38 +1,92 @@
+
+/******************************* 
+      Estilos generales 
+********************************/
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
 html {
-    font-size: 1rem;
-  }
-  
-  @include media-breakpoint-up(sm) {
-    html {
-      font-size: 1.2rem;
-    }
-  }
-  
-  @include media-breakpoint-up(md) {
-    html {
-      font-size: 1.4rem;
-    }
-  }
-  
-  @include media-breakpoint-up(lg) {
-    html {
-      font-size: 1.6rem;
-    }
-  }
+  font-size: 1rem;
+}
+
+a{
+  transition: all .3s;
+}
+
+a:hover{
+  text-decoration: none;
+  color: rgb(73, 180, 114);
+}
+
+/******************************* 
+      Clases generales 
+********************************/
 
 .shadowed{
-    text-shadow: 10px 10px 10px #ccc;
-  }
+  text-shadow: 10px 10px 10px #ccc;
+}
 
-  a:hover{
-    text-decoration: none;
-    color: #335588 ;
-  }
 
-  #mainTitle{
-    color: #fff;
-    transition: all .5s;
+/******************************* 
+          Páginas 
+********************************/
+
+/* Titulo principal */
+
+#mainTitle{
+  color: #fff;
+  transition: all .5s;
+}
+
+#mainTitle:hover{
+  text-shadow: 5px 5px 10px #fff;
+}
+
+.thumbnail{
+  color: rgb(0, 123, 255);
+}
+.thumbnail:hover{
+  animation-name: thumAnim;
+  animation-duration: .8s;
+  animation-fill-mode: forwards;
+}
+
+
+/******************************* 
+        Animaciones
+********************************/
+
+@keyframes thumAnim{
+  0% {}
+  100% {
+    transform: scale(1.3);
+    transform: rotateY(360deg);
+    color: rgb(73, 180, 114);
   }
-  #mainTitle:hover{
-    text-shadow: 5px 5px 10px #fff;
+}
+
+
+/******************************* 
+  Bootstrap  media-breakpoints
+********************************/
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
   }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
+}

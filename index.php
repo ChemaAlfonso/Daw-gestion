@@ -75,8 +75,8 @@ if (!empty($usuario) && isset($_SESSION['contador']) && $_SESSION['contador'] < 
                 </div>
 
                 <div class="row">
-                    <div class="col-12 text-right">
-                        <a class="text-white pt-4 d-block" target="_blank" href="https://github.com/ChemaAlfonso/Daw-gestion.git">Por: Chema Alfonso</a>    
+                    <div class="col-12 text-right pt-4">
+                        <a class="text-white" target="_blank" href="https://github.com/ChemaAlfonso/Daw-gestion.git">Por: Chema Alfonso &nbsp;<i class="fab fa-github h3"></i></a>    
                     </div>
                 </div>
             </div> 

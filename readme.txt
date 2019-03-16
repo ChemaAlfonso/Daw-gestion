@@ -7,6 +7,8 @@
 
 ## Nuevos cambios
 
+- Añadidas animaciones a thumbnails de inicio.
+- Modificacion estructura de enlaces en thumbnails de inicio.
 - Corrección de error de borrado continuo del ultimo registro.
 - Añadida restriccion de borrado en cascada para proveedores.
 - Aviso personalizado para borrado de proveedores.

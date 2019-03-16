@@ -32,7 +32,7 @@ function BorrarProveedor(e){
             text: "Se borraran todos los productos asociados a este proveedor!",
             icon: "warning",
             buttons: true,
-            dangerMode: true,
+            dangerMode: true
         })
         .then((willDelete) => {
             if (willDelete) {
@@ -56,7 +56,7 @@ function BorrarGeneral(e){
         text: "Una vez borrado no se podrá volver a recuperar!",
         icon: "warning",
         buttons: true,
-        dangerMode: true,
+        dangerMode: true
     })
     .then((willDelete) => {
         if (willDelete) {

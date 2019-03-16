@@ -2,51 +2,60 @@
     <div class="row text-center mt-5">
 
         <div class="col-12 col-lg-4 my-4">
-            <i class="far fa-address-card display-1 text-primary mb-3 shadowed"></i>
-           
-            <div class="row">
-                <div class="col-12">
-                    <a class="display-4 thumbnail" href="index?C=true.php">Clientes</a>
+            <a href="index?C=true.php" class="d-block">
+
+                <i class="far fa-address-card display-1 mb-3 shadowed thumbnail"></i>
+            
+                <div class="row">
+                    <div class="col-12">
+                        <span class="display-4">Clientes</span>
+                    </div>
                 </div>
-            </div>
+
+            </a>
         </div>
 
         <div class="col-12 col-lg-4 my-4">
+            <a href="index?P=true.php" class="d-block">
 
-            <i class="fas fa-box-open display-1 text-primary mb-3 shadowed"></i>
+                <i class="fas fa-box-open display-1 mb-3 shadowed thumbnail"></i>
 
-            <div class="row">
-                <div class="col-12">
-                    <a class="display-4 thumbnail"  href="index?P=true.php">Productos</a>
+                <div class="row">
+                    <div class="col-12">
+                        <span class="display-4">Productos</span>
+                    </div>
                 </div>
-            </div>
+
+            </a>
         </div>
 
         <div class="col-12 col-lg-4 my-4">
-            
-            <i class="fas fa-truck display-1 text-primary mb-3 shadowed"></i>
-            
-            <div class="row">
-                <div class="col-12">
-                    <a class="display-4 thumbnail"  href="index?PROV=true.php">Proveedores</a>
-                </div>
-            </div>
+            <a  href="index?PROV=true.php" class="d-block">
 
+                <i class="fas fa-truck display-1 mb-3 shadowed thumbnail"></i>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <span class="display-4">Proveedores</span>
+                    </div>
+                </div>
+
+            </a>
         </div>
         
         <div class="col-12 col-lg-4 my-4">
-            
-            <i class="fas fa-users display-1 text-primary mb-3 shadowed"></i>
-            
-            <div class="row">
-                <div class="col-12">
-                    <a class="display-4 thumbnail"  href="index?U=true.php">Usuarios</a>
+            <a href="index?U=true.php" class="d-block">
+                
+                <i class="fas fa-users display-1 mb-3 shadowed thumbnail"></i>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <span class="display-4">Usuarios</span>
+                    </div>
                 </div>
-            </div>
 
+            </a>
         </div>
         
-
     </div>
-
 </section>

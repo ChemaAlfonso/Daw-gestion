@@ -40,11 +40,11 @@
                     <td><?php echo $fila->stock; ?></td>
                     <td><?php echo $fila->precio; ?></td>
                     <td>
-                        <a href="productos/productos_v.php?id=<?php echo $fila->producto_id; ?>&opt=2">
-                            Modificar
+                        <a class="far fa-edit h5 modificado" href="productos/productos_v.php?id=<?php echo $fila->producto_id; ?>&opt=2">
+                            &nbsp;
                         </a>
-                        <a class="text-danger borrado" href="productos/productos_c.php?id=<?php echo $fila->producto_id; ?>&opt=3">
-                            Borrar
+                        <a class="text-danger borrado far fa-trash-alt h5" href="productos/productos_c.php?id=<?php echo $fila->producto_id; ?>&opt=3">
+                           
                         </a>
                     
                     </td>

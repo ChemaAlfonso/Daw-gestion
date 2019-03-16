@@ -45,12 +45,12 @@
                         <td><?php echo $fila->telefono; ?></td>
                         <td><?php echo $fila->email; ?></td>
                         <td>
-                            <a href="clientes/clientes_v.php?id=<?php echo $fila->cliente_id; ?>&opt=2">
-                            Modificar
-                        </a>
-                            <a class="text-danger borrado" href="clientes/clientes_c.php?id=<?php echo $fila->cliente_id; ?>&opt=3">
-                            Borrar
-                        </a>
+                            <a class="far fa-edit h5 modificado" href="clientes/clientes_v.php?id=<?php echo $fila->cliente_id; ?>&opt=2">
+                                &nbsp;
+                            </a>
+                            <a class="text-danger borrado far fa-trash-alt h5" href="clientes/clientes_c.php?id=<?php echo $fila->cliente_id; ?>&opt=3">
+                                
+                            </a>
                         
                         </td>
                     </tr>

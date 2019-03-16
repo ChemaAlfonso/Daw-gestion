@@ -39,10 +39,12 @@
                     <td><?php echo $fila->nombre; ?></td>
                     <td><?php echo $fila->email; ?></td>
                     <td>
-                        <a href="usuarios/usuarios_v.php?id=<?php echo $fila->usuario_id; ?>&opt=2">
-                        Modificar</a>
-                        <a class="text-danger borrado" href="usuarios/usuarios_c.php?id=<?php echo $fila->usuario_id; ?>&opt=3">
-                        Borrar</a>
+                        <a class="far fa-edit h5 modificado" href="usuarios/usuarios_v.php?id=<?php echo $fila->usuario_id; ?>&opt=2">
+                            &nbsp;
+                        </a>
+                        <a class="text-danger borrado far fa-trash-alt h5" href="usuarios/usuarios_c.php?id=<?php echo $fila->usuario_id; ?>&opt=3">
+                            
+                        </a>
                     
                     </td>
                 </tr>

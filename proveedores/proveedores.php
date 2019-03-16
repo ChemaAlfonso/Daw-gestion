@@ -45,10 +45,12 @@
                         <td><?php echo $fila->telefono; ?></td>
                         <td><?php echo $fila->email; ?></td>
                         <td>
-                            <a href="proveedores/proveedores_v.php?id=<?php echo $fila->proveedor_id; ?>&opt=2">
-                            Modificar</a>
-                            <a class="text-danger borrado" href="proveedores/proveedores_c.php?id=<?php echo $fila->proveedor_id; ?>&opt=3">
-                            Borrar</a>
+                            <a class="far fa-edit h5 modificado" href="proveedores/proveedores_v.php?id=<?php echo $fila->proveedor_id; ?>&opt=2">
+                                &nbsp;
+                            </a>
+                            <a class="text-danger borrado far fa-trash-alt h5" href="proveedores/proveedores_c.php?id=<?php echo $fila->proveedor_id; ?>&opt=3">
+                                
+                            </a>
                         
                         </td>
                     </tr>

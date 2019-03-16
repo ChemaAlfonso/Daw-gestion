@@ -1,14 +1,3 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html" />
-	<meta name="author" content="Javier Miras" />
-    <meta charset="utf-8" />
-
-	<title>Usuarios</title>
-</head>
-
-<body>
 <div class="container">
 
     <h1 class="display-3 mb-3">Usuarios</h1>
@@ -52,8 +41,7 @@
                     <td>
                         <a href="usuarios/usuarios_v.php?id=<?php echo $fila->usuario_id; ?>&opt=2">
                         Modificar</a>
-                        <a class="text-danger" href="usuarios/usuarios_c.php?id=<?php echo $fila->usuario_id; ?>&opt=3"
-                        onclick="return confirm('¿Deseas borrar el usuario seleccionado?');">
+                        <a class="text-danger borrado" href="usuarios/usuarios_c.php?id=<?php echo $fila->usuario_id; ?>&opt=3">
                         Borrar</a>
                     
                     </td>
@@ -89,6 +77,3 @@
         </div>
     </div>
 </div>
-
-</body>
-</html>

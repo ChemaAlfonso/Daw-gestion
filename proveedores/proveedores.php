@@ -1,6 +1,6 @@
 <div class="container">
     
-    <h1 class="display-3 mb-3">Clientes</h1>
+    <h1 class="display-3 mb-3">Proveedores</h1>
 
         <div class="row">
             <div class="col-12 text-center table-responsive">
@@ -20,18 +20,18 @@
                         </tr>
                     </thead>
                     <?php
-                    if (is_file($web = '../clientes/cclientesbd.php')){
+                    if (is_file($web = '../proveedores/cproveedoresbd.php')){
                         require_once($web);
                     }else {
-                        require_once('./clientes/cclientesbd.php');
+                        require_once('./proveedores/cproveedoresbd.php');
                     }
                     
-                    $cliente = new CclientesBD;
+                    $proveedor = new CProveedoresBD;
                     
-                    if ($cliente->Clientes())
+                    if ($proveedor->Proveedores())
                     {
                         
-                        foreach($cliente->filas as $fila)
+                        foreach($proveedor->filas as $fila)
                         {
                             
                     ?>
@@ -45,12 +45,10 @@
                         <td><?php echo $fila->telefono; ?></td>
                         <td><?php echo $fila->email; ?></td>
                         <td>
-                            <a href="clientes/clientes_v.php?id=<?php echo $fila->cliente_id; ?>&opt=2">
-                            Modificar
-                        </a>
-                            <a class="text-danger borrado" href="clientes/clientes_c.php?id=<?php echo $fila->cliente_id; ?>&opt=3">
-                            Borrar
-                        </a>
+                            <a href="proveedores/proveedores_v.php?id=<?php echo $fila->proveedor_id; ?>&opt=2">
+                            Modificar</a>
+                            <a class="text-danger borrado" href="proveedores/proveedores_c.php?id=<?php echo $fila->proveedor_id; ?>&opt=3">
+                            Borrar</a>
                         
                         </td>
                     </tr>
@@ -61,17 +59,18 @@
                     {
                     ?>
                         <tr>
-                            <td colspan="12">No hay clientes.</td>
+                            <td colspan="12">No hay proveedores.</td>
                         </tr>
                     <?php
-                    } // if Clientes.    
+                    } // if proveedores.    
                     ?>    
                         <tr>
-                            <td colspan="12"><a class="text-success px-1 rounded" href="clientes/clientes_v.php?id=0&opt=1">Nuevo</td>
+                            <td colspan="12"><a class="text-success px-1 rounded" href="proveedores/proveedores_v.php?id=0&opt=1">Nuevo</td>
                         </tr>
                 </table>
             </div>
         </div>
+
 
     <div class="row">
         <div class="col-2 offset-5 text-center mt-5 py-3  bg-primary rounded-pill">

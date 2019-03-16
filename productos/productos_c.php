@@ -13,11 +13,12 @@ if ($option == BORRAR)
 }
 else
 {
-    $prd->producto_id = $producto_id;
-    $prd->nombre    = FILTER_INPUT(INPUT_POST, 'nombre');
-    $prd->codigo = FILTER_INPUT(INPUT_POST, 'codigo');
-    $prd->stock     = FILTER_INPUT(INPUT_POST, 'stock');
-    $prd->precio      = FILTER_INPUT(INPUT_POST, 'precio');
+    $prd->producto_id     = $producto_id;
+    $prd->proveedor_id    = FILTER_INPUT(INPUT_POST, 'proveedor_id');
+    $prd->nombre          = FILTER_INPUT(INPUT_POST, 'nombre');
+    $prd->codigo          = FILTER_INPUT(INPUT_POST, 'codigo');
+    $prd->stock           = FILTER_INPUT(INPUT_POST, 'stock');
+    $prd->precio          = FILTER_INPUT(INPUT_POST, 'precio');
 
     if ($option == INSERTAR)
     {

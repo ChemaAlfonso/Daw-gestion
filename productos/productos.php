@@ -1,14 +1,3 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html" />
-	<meta name="author" content="Javier Miras By Chema Alfonso" />
-    <meta charset="utf-8" />
-
-	<title>Productos</title>
-</head>
-
-<body>
 <div class="container">
 
     <h1 class="display-3 mb-3">Productos</h1>
@@ -19,12 +8,14 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Codigo</th>
+                        <th scope="col">Proveedor</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Stock</th>
                         <th scope="col">Precio</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
+                
                 <?php
                 if (is_file($web = '../productos/cproductosbd.php')){
                     require_once($web);
@@ -44,15 +35,17 @@
 
                 <tr>
                     <td scope="row"><?php echo $fila->codigo; ?></td>
+                    <td><?php echo $fila->proveedor; ?></td>
                     <td><?php echo $fila->nombre; ?></td>
                     <td><?php echo $fila->stock; ?></td>
                     <td><?php echo $fila->precio; ?></td>
                     <td>
                         <a href="productos/productos_v.php?id=<?php echo $fila->producto_id; ?>&opt=2">
-                        Modificar</a>
-                        <a class="text-danger" href="productos/productos_c.php?id=<?php echo $fila->producto_id; ?>&opt=3"
-                        onclick="return confirm('¿Deseas borrar el producto seleccionado?');">
-                        Borrar</a>
+                            Modificar
+                        </a>
+                        <a class="text-danger borrado" href="productos/productos_c.php?id=<?php echo $fila->producto_id; ?>&opt=3">
+                            Borrar
+                        </a>
                     
                     </td>
                 </tr>
@@ -65,7 +58,7 @@
                 ?>
 
                     <tr>
-                        <td colspan="5">No hay productos.</td>
+                        <td colspan="6">No hay productos.</td>
                     </tr>
 
                 <?php
@@ -86,6 +79,3 @@
         </div>
     </div>
 </div>
-
-</body>
-</html>

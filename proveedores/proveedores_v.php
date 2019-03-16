@@ -17,7 +17,7 @@
 require_once('../config/constantes.inc.php');
 
 $option     = filter_input(INPUT_GET, 'opt');
-$cliente_id = filter_input(INPUT_GET, 'id'); 
+$proveedor_id = filter_input(INPUT_GET, 'id'); 
 
 $nombre       = '';
 $cif          = '';
@@ -31,19 +31,19 @@ $email        = '';
 // Si estamos modificando
 if ($option == MODIFICAR)
 {
-    require_once('../clientes/cclientesbd.php');
+    require_once('../proveedores/cproveedoresbd.php');
     
-    $cli   = new CClientesBD;
-    if ($cli->Cliente($cliente_id))
+    $pro   = new CProveedoresBD;
+    if ($pro->Proveedor($proveedor_id))
     {
-        $nombre     = $cli->nombre;
-        $cif        = $cli->cif;
-        $direccion  = $cli->direccion;
-        $poblacion  = $cli->poblacion;
-        $provincia  = $cli->provincia;
-        $cp         = $cli->cp;
-        $telefono   = $cli->telefono;
-        $email      = $cli->email;
+        $nombre     = $pro->nombre;
+        $cif        = $pro->cif;
+        $direccion  = $pro->direccion;
+        $poblacion  = $pro->poblacion;
+        $provincia  = $pro->provincia;
+        $cp         = $pro->cp;
+        $telefono   = $pro->telefono;
+        $email      = $pro->email;
     } 
 }
 
@@ -53,26 +53,26 @@ if ($option == MODIFICAR)
     <div class="container jumbotron mt-5">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-right text-primary mb-3">Cliente</h1>
-                <form action="clientes_c.php?id=<?php echo $cliente_id; ?>&opt=<?php echo $option; ?>" method="post">
+                <h1 class="text-right text-primary mb-3">Proveedor</h1>
+                <form action="proveedores_c.php?id=<?php echo $proveedor_id; ?>&opt=<?php echo $option; ?>" method="post">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" value="<?php echo $nombre; ?>" />
+                        <input type="text" class="form-control" name="nombre" value="<?php echo $nombre; ?>"  required/>
                     </div>
 
                     <div class="form-group">
                         <label for="cif">Cif</label>
-                        <input type="text" class="form-control" name="cif" value="<?php echo $cif; ?>" />
+                        <input type="text" class="form-control" name="cif" value="<?php echo $cif; ?>"  required/>
                     </div>
 
                     <div class="form-group">
                         <label for="direccion">Direccion</label>
-                        <input type="text" class="form-control" name="direccion" value="<?php echo $direccion; ?>" />
+                        <input type="text" class="form-control" name="direccion" value="<?php echo $direccion; ?>"  required/>
                     </div>
 
                     <div class="form-group">
                         <label for="poblacion">Poblacion</label>
-                        <input type="text" class="form-control" name="poblacion" value="<?php echo $poblacion; ?>" />
+                        <input type="text" class="form-control" name="poblacion" value="<?php echo $poblacion; ?>"  required/>
                     </div>
 
                     <?php 
@@ -83,7 +83,7 @@ if ($option == MODIFICAR)
 
                     <div class="form-group">
                         <label for="provincia">Provincia</label>
-                        <!--<input type="text" class="form-control" name="provincia" value="<?php echo $provincia; ?>" />-->
+                        
                         <select class="form-control" name="provincia" id="provincia">
                             <?php foreach($prov->filas as $index =>  $fila): ?>
                                 <option value="<?= $fila->provincia ?>" <?= $provincia == $fila->provincia ? 'selected' : ''?>> <?= $fila->provincia ?> </option>
@@ -112,13 +112,13 @@ if ($option == MODIFICAR)
                     class="btn btn-danger" 
                     value="Cancelar" 
                     role="button"
-                    onclick="location.href='../index.php?C=true'" />
+                    onclick="location.href='../index.php?PROV=true'" />
                     
                 </form>
                 
                 <div class="row">
                     <div class="col-2 offset-5 text-center mt-5 py-3  bg-primary rounded-pill">
-                        <a class="text-white" href="../index.php?C=true">Volver</a>
+                        <a class="text-white" href="../index.php?PROV=true">Volver</a>
                     </div>
                 </div>
             </div>

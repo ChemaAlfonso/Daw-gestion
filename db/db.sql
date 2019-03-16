@@ -1,9 +1,11 @@
+DROP DATABASE IF EXISTS basedatos;
 CREATE DATABASE IF NOT EXISTS basedatos;
 
 use basedatos;
 
 
 /* Tabla usuarios */
+DROP TABLE IF EXISTS usuarios;
 CREATE TABLE IF NOT EXISTS usuarios(
     usuario_id      int(10) auto_increment,
     usuario         varchar(50),
@@ -11,21 +13,42 @@ CREATE TABLE IF NOT EXISTS usuarios(
     nombre          varchar(125),
     email           varchar(150) UNIQUE,
     CONSTRAINT pk_pkusuarios PRIMARY KEY (usuario_id)
-)Engine=InnoDB;
+)Engine=InnoDB DEFAULT CHARSET=latin1;
+
+
+/* Tabla proveedores */
+DROP TABLE IF EXISTS proveedores;
+CREATE TABLE IF NOT EXISTS proveedores(
+proveedor_id int(11) auto_increment,
+nombre      varchar(32),
+cif         char(9) UNIQUE,
+direccion   varchar(32),
+poblacion   varchar(32),
+provincia   varchar(32),
+cp          char(5),
+telefono    char(11),
+email       varchar(64) UNIQUE,
+CONSTRAINT pk_proveedores PRIMARY KEY (proveedor_id)
+)Engine=InnoDB DEFAULT CHARSET=latin1;
+
 
 
 /* Tabla productos */
+DROP TABLE IF EXISTS productos;
 CREATE TABLE IF NOT EXISTS productos(
     producto_id int(11) auto_increment,
+    proveedor_id int(11),
     codigo      char(8),
     nombre      varchar(32),
     stock       decimal(10,3),
     precio      decimal(10,3),
-    CONSTRAINT pk_pkproductos PRIMARY KEY (producto_id)
-)Engine=InnoDB;
+    CONSTRAINT pk_pkproductos PRIMARY KEY (producto_id),
+    CONSTRAINT fk_productos_proveedores FOREIGN KEY (proveedor_id) REFERENCES proveedores(proveedor_id)
+)Engine=InnoDB DEFAULT CHARSET=latin1;
 
 
 /* Tabla clientes */
+DROP TABLE IF EXISTS clientes;
 CREATE TABLE IF NOT EXISTS clientes(
     cliente_id  int(11) auto_increment,
     nombre      varchar(32),
@@ -37,15 +60,18 @@ CREATE TABLE IF NOT EXISTS clientes(
     telefono    char(11),
     email       varchar(64) UNIQUE,
     CONSTRAINT pk_pkclientes PRIMARY KEY (cliente_id)
-)Engine=InnoDB;
+)Engine=InnoDB DEFAULT CHARSET=latin1;
 
 
 /* Tabla provincias */
+DROP TABLE IF EXISTS provincias;
 CREATE TABLE IF NOT EXISTS `provincias` (
   `id_provincia` smallint(6) DEFAULT NULL,
   `provincia` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+/* Valores de provincias */
 INSERT INTO `provincias` (`id_provincia`, `provincia`)
 VALUES
 	(2,'Albacete'),
@@ -100,4 +126,5 @@ VALUES
 	(47,'Valladolid'),
 	(49,'Zamora'),
         (50,'Zaragoza');
+
 

@@ -11,10 +11,7 @@ if (isset($_SESSION['usuario'])){
 
 /* Seteo de la cookie de sesion si se requiere */
 if (isset($usuario) && isset($_SESSION['recordar'])){
-
-    
-
-    
+     
     if ($_SESSION['recordar'] === true){
 
         setcookie("userLogin",$usuario, $_SESSION['logstart']+604800);
@@ -26,7 +23,6 @@ if (isset($usuario) && isset($_SESSION['recordar'])){
 
     }
     
-
     unset($_SESSION['recordar']);
     
 }
@@ -52,6 +48,7 @@ if (isset($usuario) && isset($_SESSION['recordar'])){
         
     <!-- SweetAlert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     
     <title>Gestión SGPDO</title>
 </head>
@@ -73,7 +70,7 @@ if (!empty($usuario) && isset($_SESSION['contador']) && $_SESSION['contador'] < 
             <div class="jumbotron text-center bg-primary text-white mb-5">
                 <div class="row">
                     <div class="col-12">
-                        <a class="text-white" href="index.php"><h1><i class="fas fa-strikethrough display-4"></i>GPDO - Sistema de Gestión con PDO</h1></a>
+                        <a id="mainTitle" href="index.php"><h1><i class="fas fa-strikethrough display-4"></i>GPDO - Sistema de Gestión con PDO</h1></a>
                     </div>
                 </div>
 
@@ -127,6 +124,10 @@ elseif (isset($_GET['C']))
 {
     require_once "clientes/clientes.php";
 }
+elseif (isset($_GET['PROV']))
+{
+    require_once "proveedores/proveedores.php";
+}
 else {
     require_once "main.php";
 }
@@ -150,6 +151,9 @@ if ($sessionError){
     <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     
+
+    <!-- Main Scripts -->
+<script src="assets/js/mainScripts.js"></script>
 
 </body>
 </html>

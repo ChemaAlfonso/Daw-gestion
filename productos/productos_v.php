@@ -16,13 +16,14 @@
 
 require_once('../config/constantes.inc.php');
 
-$option     = filter_input(INPUT_GET, 'opt');
+$option      = filter_input(INPUT_GET, 'opt');
 $producto_id = filter_input(INPUT_GET, 'id'); 
 
-$codigo    = '';
-$nombre = '';
-$stock     = '';
-$precio      = '';
+$proveedor_id  = '';
+$codigo        = '';
+$nombre        = '';
+$stock         = '';
+$precio        = '';
 
 // Si estamos modificando
 if ($option == MODIFICAR)
@@ -35,10 +36,11 @@ if ($option == MODIFICAR)
     if ($prd->Producto($producto_id))
     {
         
-        $codigo      = $prd->codigo; 
-        $nombre      = $prd->nombre; 
-        $stock       = $prd->stock; 
-        $precio      = $prd->precio;
+        $proveedor_id    = $prd->proveedor_id; 
+        $codigo          = $prd->codigo; 
+        $nombre          = $prd->nombre; 
+        $stock           = $prd->stock; 
+        $precio          = $prd->precio;
     } 
 }
 
@@ -56,6 +58,22 @@ if ($option == MODIFICAR)
                         <input type="text" class="form-control" name="nombre" value="<?php echo $nombre; ?>" required />
                     </div>
 
+                    <?php 
+                        require_once('../proveedores/cproveedoresbd.php');
+                        $prov = new CProveedoresBD();
+                        $prov->Proveedores();
+                    ?>
+
+                    <div class="form-group">
+                        <label for="proveedor">Proveedor</label>
+                        <!--<input type="text" class="form-control" name="provincia" value="<?php echo $proveedor; ?>" />-->
+                        <select class="form-control" name="proveedor_id" id="proveedor" required>
+                            <?php foreach($prov->filas as $index =>  $fila): ?>
+                                <option value="<?= $fila->proveedor_id ?>" <?= $proveedor_id == $fila->proveedor_id ? 'selected' : ''?>> <?= $fila->nombre ?> </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
                     <div class="form-group">
                         <label for="codigo">Codigo</label>
                         <input type="number" class="form-control" name="codigo" value="<?php echo $codigo; ?>" required />
@@ -63,12 +81,12 @@ if ($option == MODIFICAR)
 
                     <div class="form-group">
                         <label for="precio">Precio</label>
-                        <input type="text" class="form-control" name="precio" value="<?php echo $precio; ?>" required />
+                        <input type="number" class="form-control" step="0.01" name="precio" value="<?php echo $precio; ?>" required max="100000" />
                     </div>
 
                     <div class="form-group">
                         <label for="stock">Stock</label>
-                        <input type="text" class="form-control" name="stock" value="<?php echo $stock; ?>" required />
+                        <input type="number" class="form-control" step="0.01" name="stock" value="<?php echo $stock; ?>" required max="100000" />
                     </div>
 
                         <input class="btn btn-success" role="button" type="submit" value="Aceptar" />

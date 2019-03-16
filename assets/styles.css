@@ -28,3 +28,11 @@ html {
     text-decoration: none;
     color: #335588 ;
   }
+
+  #mainTitle{
+    color: #fff;
+    transition: all .5s;
+  }
+  #mainTitle:hover{
+    text-shadow: 5px 5px 10px #fff;
+  }

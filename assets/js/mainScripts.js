@@ -13,7 +13,6 @@ if ( borradores )
     
         borrador.addEventListener('click', function(e){
             e.preventDefault();
-            console.log(searchParams);
 
             if (searchParams == '?PROV=true'){
                 BorrarProveedor(e);

@@ -1,7 +1,12 @@
 <?php
+
 session_start();
 
 require_once('biblioteca/biblioteca.inc.php');
+
+/************************************
+ Comprobacion de acceso de usuario
+************************************/
 
 if (isset($_SESSION['usuario'])){
     $usuario = $_SESSION['usuario'];
@@ -26,83 +31,34 @@ if (isset($usuario) && isset($_SESSION['recordar'])){
     unset($_SESSION['recordar']);
     
 }
-?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="autor" content="Chema Alfonso" >
-    <meta charset="UTF-8">
+/*******************************
+             Head
+*******************************/
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    
-    <!-- Font-awesome --> 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+require_once 'shared/head.php';
 
-    <!-- estilos -->
-    <link rel="stylesheet" type="text/css" href="assets/styles.css">
-        
-    <!-- SweetAlert -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-    
-    <title>Gestión SGPDO</title>
-</head>
-<body>
-<?php
-
+//Alerta de bienvenida
 if (!empty($usuario) && isset($_SESSION['contador']) && $_SESSION['contador'] < 1){
     echo "<script>swal('Bienvenido $usuario!','Me alegra verte por aquí!', 'success')</script>";
     $_SESSION['contador']++;
 }
 
-?>
+/*******************************
+            Header
+*******************************/
 
-<!-- Main Header -->
-<header class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-        
-            <div class="jumbotron text-center bg-primary text-white mb-5">
-                <div class="row">
-                    <div class="col-12">
-                        <a id="mainTitle" href="index.php"><h1><i class="fas fa-strikethrough display-4"></i>GPDO - Sistema de Gestión con PDO</h1></a>
-                    </div>
-                </div>
+require_once 'shared/header.php';
 
-                <div class="row">
-                    <div class="col-12 text-right pt-4">
-                        <a class="text-white" target="_blank" href="https://github.com/ChemaAlfonso/Daw-gestion.git">Por: Chema Alfonso &nbsp;<i class="fab fa-github h3"></i></a>    
-                    </div>
-                </div>
-            </div> 
+//Panel de bienvenida
+require_once 'shared/bienvenida.php';
 
-        </div>
-    </div>
-</header>
 
-<!-- Panel bienvenida -->
-<div class="container-fluid">
-    <div class="row">
 
-        <div class="col-3 offset-9 text-center">
-            <?= !empty($usuario) ?  "Bienvenido <span class='text-primary'>".$usuario."</span>" : "Bienvenido <span class='text-primary'>Desconocido</span>" ;?>
-        </div>
+/*******************************
+     Controlador frontal
+*******************************/
 
-        <div class="col-3 offset-9 text-center">
-            <a href="login/logout.php" class="text-white d-block mt-3"> <?= !empty($usuario) ?  "<span class=' btn btn-danger'>Cerrar sesión</span>" : '' ;?> </a>
-        </div>
-
-    </div>
-</div>
-
-<?php
-
-//Controlador frontal
 
 if (empty($usuario) && empty($_GET['reg']))
 {
@@ -134,7 +90,10 @@ else {
     
 
 
-//Info de errores
+/*******************************
+        Info de errores
+*******************************/
+
 $sessionError = !empty($_SESSION['error']) ? filter_var($_SESSION['error'], FILTER_SANITIZE_STRING) : '';
 
 if ($sessionError){
@@ -142,19 +101,11 @@ if ($sessionError){
     $_SESSION['error'] = null;
 
 }
-?>
 
-    <!-- JQuery -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-   
-    <!-- Bootstrap JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    
 
-    <!-- Main Scripts -->
-<script src="assets/js/mainScripts.js"></script>
+/*******************************
+            footer
+*******************************/
 
-</body>
-</html>
+require_once 'shared/footer.php';
 

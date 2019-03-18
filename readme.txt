@@ -67,15 +67,4 @@
 - Modificado path de estilos
 - Añadidas sombras en algunos iconos
 - Optimizaciones de acceso a los recursos
-- Mejoras para lectura de codigo. 
-
-
-                     +++++
-
-
-## Errores conocidos en solución
-
-
-## Errores conocidos solucionados.
-
-- Borrado con Sweet Alert, siempre borra el ultimo registro.
+- Mejoras para lectura de codigo.

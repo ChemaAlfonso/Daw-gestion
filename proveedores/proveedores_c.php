@@ -36,6 +36,6 @@ else
     
 }
 
-header('location: ../index.php?PROV=true');
+header('location: ../index.php?route=PROV');
 
 ?>

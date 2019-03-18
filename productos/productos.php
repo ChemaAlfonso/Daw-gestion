@@ -8,8 +8,8 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Codigo</th>
-                        <th scope="col">Proveedor</th>
                         <th scope="col">Nombre</th>
+                        <th scope="col">Proveedor</th>
                         <th scope="col">Stock</th>
                         <th scope="col">Precio</th>
                         <th scope="col"></th>
@@ -30,21 +30,20 @@
                     
                     foreach($producto->filas as $fila)
                     {
-                        
                 ?>
 
                 <tr>
-                    <td scope="row"><?php echo $fila->codigo; ?></td>
-                    <td><?php echo $fila->proveedor; ?></td>
-                    <td><?php echo $fila->nombre; ?></td>
-                    <td><?php echo $fila->stock; ?></td>
-                    <td><?php echo $fila->precio; ?></td>
-                    <td>
+                    <td scope="row align-middle"><?php echo $fila->producto_id; ?></td>
+                    <td class="align-middle"><?php echo $fila->nombre; ?></td>
+                    <td class="align-middle"><?php echo $fila->proveedor; ?></td>
+                    <td class="align-middle"><?php echo $fila->stock; ?></td>
+                    <td class="align-middle"><?php echo $fila->precio; ?></td>
+                    <td class="align-middle">
                         <a class="far fa-edit h5 modificado" href="productos/productos_v.php?id=<?php echo $fila->producto_id; ?>&opt=2">
                             &nbsp;
                         </a>
                         <a class="text-danger borrado far fa-trash-alt h5" href="productos/productos_c.php?id=<?php echo $fila->producto_id; ?>&opt=3">
-                           
+                            &nbsp;
                         </a>
                     
                     </td>

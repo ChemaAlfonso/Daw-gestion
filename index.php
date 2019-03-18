@@ -4,6 +4,8 @@ session_start();
 
 require_once('biblioteca/biblioteca.inc.php');
 
+require_once('autoload.php');
+
 /************************************
  Comprobacion de acceso de usuario
 ************************************/
@@ -54,41 +56,13 @@ require_once 'shared/header.php';
 require_once 'shared/bienvenida.php';
 
 
-
 /*******************************
-     Controlador frontal
+            Rutas
 *******************************/
 
+$route = ( isset($_GET['route']) ) ? filter_var($_GET['route'],FILTER_SANITIZE_STRING) : 'main.php' ;
 
-if (empty($usuario) && empty($_GET['reg']))
-{
-    require_once "login/login.php";
-}
-elseif (!empty($_GET['reg']))
-{
-    require_once "login/register.php";
-}
-elseif (isset($_GET['P']))
-{
-    require_once "productos/productos.php";
-}
-elseif (isset($_GET['U']))
-{
-    require_once "usuarios/usuarios.php";
-}
-elseif (isset($_GET['C']))
-{
-    require_once "clientes/clientes.php";
-}
-elseif (isset($_GET['PROV']))
-{
-    require_once "proveedores/proveedores.php";
-}
-else {
-    require_once "main.php";
-}
-    
-
+$router = new Router( $route, $usuario );
 
 /*******************************
         Info de errores

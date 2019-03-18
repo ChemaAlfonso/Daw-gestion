@@ -36,20 +36,20 @@
                             
                     ?>
                     <tr>
-                        <td scope="row"><?php echo $fila->nombre; ?></td>
-                        <td><?php echo $fila->cif; ?></td>
-                        <td><?php echo $fila->direccion; ?></td>
-                        <td><?php echo $fila->poblacion; ?></td>
-                        <td><?php echo $fila->provincia; ?></td>
-                        <td><?php echo $fila->cp; ?></td>
-                        <td><?php echo $fila->telefono; ?></td>
-                        <td><?php echo $fila->email; ?></td>
-                        <td>
+                        <td scope="row align-middle"><?php echo $fila->nombre; ?></td>
+                        <td class="align-middle"><?php echo $fila->cif; ?></td>
+                        <td class="align-middle"><?php echo $fila->direccion; ?></td>
+                        <td class="align-middle"><?php echo $fila->poblacion; ?></td>
+                        <td class="align-middle"><?php echo $fila->provincia; ?></td>
+                        <td class="align-middle"><?php echo $fila->cp; ?></td>
+                        <td class="align-middle"><?php echo $fila->telefono; ?></td>
+                        <td class="align-middle"><?php echo $fila->email; ?></td>
+                        <td class="align-middle">
                             <a class="far fa-edit h5 modificado" href="proveedores/proveedores_v.php?id=<?php echo $fila->proveedor_id; ?>&opt=2">
                                 &nbsp;
                             </a>
                             <a class="text-danger borrado far fa-trash-alt h5" href="proveedores/proveedores_c.php?id=<?php echo $fila->proveedor_id; ?>&opt=3">
-                                
+                                &nbsp;
                             </a>
                         
                         </td>

@@ -34,16 +34,16 @@
                 ?>
 
                 <tr>
-                    <td scope="row"><?php echo $fila->usuario; ?></td>
-                    <td><?php echo $fila->contrasena; ?></td>
-                    <td><?php echo $fila->nombre; ?></td>
-                    <td><?php echo $fila->email; ?></td>
-                    <td>
+                    <td scope="row align-middle"><?php echo $fila->usuario; ?></td>
+                    <td class="align-middle"><?php echo $fila->contrasena; ?></td>
+                    <td class="align-middle"><?php echo $fila->nombre; ?></td>
+                    <td class="align-middle"><?php echo $fila->email; ?></td>
+                    <td class="align-middle">
                         <a class="far fa-edit h5 modificado" href="usuarios/usuarios_v.php?id=<?php echo $fila->usuario_id; ?>&opt=2">
                             &nbsp;
                         </a>
                         <a class="text-danger borrado far fa-trash-alt h5" href="usuarios/usuarios_c.php?id=<?php echo $fila->usuario_id; ?>&opt=3">
-                            
+                            &nbsp;   
                         </a>
                     
                     </td>

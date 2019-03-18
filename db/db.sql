@@ -3,8 +3,10 @@ CREATE DATABASE IF NOT EXISTS basedatos;
 
 use basedatos;
 
+/**************************
+      Tabla usuarios 
+**************************/
 
-/* Tabla usuarios */
 DROP TABLE IF EXISTS usuarios;
 CREATE TABLE IF NOT EXISTS usuarios(
     usuario_id      int(10) auto_increment,
@@ -15,8 +17,10 @@ CREATE TABLE IF NOT EXISTS usuarios(
     CONSTRAINT pk_pkusuarios PRIMARY KEY (usuario_id)
 )Engine=InnoDB DEFAULT CHARSET=latin1;
 
+/**************************
+      Tabla proveedores 
+**************************/
 
-/* Tabla proveedores */
 DROP TABLE IF EXISTS proveedores;
 CREATE TABLE IF NOT EXISTS proveedores(
 proveedor_id int(11) auto_increment,
@@ -32,8 +36,22 @@ CONSTRAINT pk_proveedores PRIMARY KEY (proveedor_id)
 )Engine=InnoDB DEFAULT CHARSET=latin1;
 
 
+/* Inserts de proveedores */
+INSERT INTO `proveedores` (`proveedor_id`, `nombre`, `cif`, `direccion`, `poblacion`, `provincia`, `cp`, `telefono`, `email`) VALUES 
+    (NULL, 'Proveedor mayorista', '12345678Q', 'Calle al por mayor 23', 'Mostoles', 'Madrid', '28935', '654987987', 'mayorista@alpormayor.com');
 
-/* Tabla productos */
+INSERT INTO `proveedores` (`proveedor_id`, `nombre`, `cif`, `direccion`, `poblacion`, `provincia`, `cp`, `telefono`, `email`) VALUES 
+    (NULL, 'Proveedor minorista', '23541232Q', 'Calle al por menor 23', 'Mostoles', 'Madrid', '28935', '654987987', 'minorista@alpormenor.com');
+
+INSERT INTO `proveedores` (`proveedor_id`, `nombre`, `cif`, `direccion`, `poblacion`, `provincia`, `cp`, `telefono`, `email`) VALUES 
+    (NULL, 'Proveedor especial', '75841232Q', 'Calle especial 8', 'Mostoles', 'Madrid', '28935', '654117987', 'especial@especial.com');
+
+
+
+/**************************
+      Tabla productos 
+**************************/
+
 DROP TABLE IF EXISTS productos;
 CREATE TABLE IF NOT EXISTS productos(
     producto_id int(11) auto_increment,
@@ -43,11 +61,22 @@ CREATE TABLE IF NOT EXISTS productos(
     stock       decimal(10,3),
     precio      decimal(10,3),
     CONSTRAINT pk_pkproductos PRIMARY KEY (producto_id),
-    CONSTRAINT fk_productos_proveedores FOREIGN KEY (proveedor_id) REFERENCES proveedores(proveedor_id) ON DELETE CASCADE
+    CONSTRAINT fk_productos_proveedores FOREIGN KEY (proveedor_id) REFERENCES proveedores(proveedor_id) ON DELETE CASCADE ON UPDATE CASCADE
 )Engine=InnoDB DEFAULT CHARSET=latin1;
 
 
-/* Tabla clientes */
+
+/* Inserts de productos */
+INSERT INTO `productos` (`producto_id`, `proveedor_id`, `codigo`, `nombre`, `stock`, `precio`) VALUES 
+(NULL, '1', '1', 'Zapatos negros', '200', '23.99'),
+(NULL, '2', '1', 'Gorro verde', '300', '12.99'),
+(NULL, '2', '2', 'Camiseta Azul', '100', '19.99');
+
+
+/**************************
+      Tabla clientes 
+**************************/
+
 DROP TABLE IF EXISTS clientes;
 CREATE TABLE IF NOT EXISTS clientes(
     cliente_id  int(11) auto_increment,
@@ -63,7 +92,16 @@ CREATE TABLE IF NOT EXISTS clientes(
 )Engine=InnoDB DEFAULT CHARSET=latin1;
 
 
-/* Tabla provincias */
+/* Inserts de clientes */
+INSERT INTO `clientes` (`cliente_id`, `nombre`, `cif`, `direccion`, `poblacion`, `provincia`, `cp`, `telefono`, `email`) VALUES 
+(NULL, 'Un buen cliente', '12245678Q', 'Calle la mejor 18', 'Málaga', 'Málaga', '29014', '789456123', 'buencliente@gmail.com'), 
+(NULL, 'El mejor cliente', '54345678Q', 'Calle la otra 26', 'Málaga', 'Málaga', '29014', '789456523', 'mejorcliente@gmail.com');
+
+
+/**************************
+     Tabla provincias 
+**************************/
+
 DROP TABLE IF EXISTS provincias;
 CREATE TABLE IF NOT EXISTS `provincias` (
   `id_provincia` smallint(6) DEFAULT NULL,
@@ -71,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `provincias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-/* Valores de provincias */
+/* Inserts de provincias */
 INSERT INTO `provincias` (`id_provincia`, `provincia`)
 VALUES
 	(2,'Albacete'),
@@ -125,6 +163,4 @@ VALUES
 	(46,'Valencia/València'),
 	(47,'Valladolid'),
 	(49,'Zamora'),
-        (50,'Zaragoza');
-
-
+	(50,'Zaragoza');

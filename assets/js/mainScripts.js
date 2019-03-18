@@ -1,12 +1,18 @@
+/**********************************
+  Localizacion y parametros de url 
+ **********************************/
 
-/* Localizacion y parametro de url */
-const url = window.location;
-const searchParams = url.search;
+var url = window.location;
+var searchParams = url.search;
 
-/* Borrado de elementos */
+/****************************
+     Borrado de filas
+ ****************************/
+
+/* Selector de borradores */
 var borradores = document.querySelectorAll('.borrado');
 
-/* Si hay elementos los seleccionamos */
+/* Si hay borradores los seleccionamos */
 if ( borradores )
 {
     for (var borrador of borradores){
@@ -14,10 +20,10 @@ if ( borradores )
         borrador.addEventListener('click', function(e){
             e.preventDefault();
 
-            if (searchParams == '?PROV=true'){
+            if (searchParams == '?route=PROV'){
                 BorrarProveedor(e);
             } else {
-                BorrarGeneral(e)
+                BorrarGeneral(e);
             }
             
         });
@@ -25,7 +31,10 @@ if ( borradores )
     }
 } 
 
-/* Funciones de borrado */
+/****************************
+     Funciones de borrado 
+ ****************************/
+
 function BorrarProveedor(e){
         swal({
             title: "Atencion!!",
@@ -41,11 +50,25 @@ function BorrarProveedor(e){
                 });
 
                 window.setTimeout(function(){
-                    window.location = e.originalTarget.href;
+
+                    //Validacion de navegadores
+                    if ( es_edge() ){
+                        
+                        window.location = e.target.href;
+
+                    } else if( es_firefox() ) {
+                        window.location = e.originalTarget.href;
+                        
+                    } else {
+                        
+                        window.location = e.toElement.href;
+                            
+                    }
+
                 },800);
 
             } else {
-                swal("Tranquilo, tu registro esta a salvo!");
+                swal("Tranquilo, tus datos estan a salvo!");
             }
         });
 }
@@ -65,11 +88,62 @@ function BorrarGeneral(e){
             });
 
             window.setTimeout(function(){
-                window.location = e.originalTarget.href;
+
+                //Validacion de navegadores
+                if ( es_edge() ){
+                    
+                    window.location = e.target.href;
+
+                } else if( es_firefox() ) {
+                    window.location = e.originalTarget.href;
+                    
+                } else {
+                    
+                    window.location = e.toElement.href;
+                        
+                }
+
             },800);
 
         } else {
-            swal("Tranquilo, tu registro esta a salvo!");
+            swal("Tranquilo, tus datos estan a salvo!");
         }
     });
+}
+
+/****************************
+       Compatibilidad
+ ****************************/
+
+function es_edge(){
+
+    var es_edge = navigator.userAgent.toLowerCase().indexOf('edge') > -1 && navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+
+    if(es_edge){
+        return true;
+    }
+
+    return false;
+}
+
+function es_firefox(){
+
+    var es_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+
+    if(es_firefox){
+        return true;
+    }
+
+    return false;
+}
+
+function es_chrome(){
+
+    var es_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+
+    if(es_chrome){
+        return true;
+    }
+
+    return false;
 }

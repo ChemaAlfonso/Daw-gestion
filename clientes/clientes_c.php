@@ -36,6 +36,6 @@ else
     
 }
 
-header('location: ../index.php?C=true');
+header('location: ../index.php?route=C');
 
 ?>

@@ -79,13 +79,13 @@ if ($option == MODIFICAR)
                     <input type="button"
                         class="btn btn-danger"  
                         value="Cancelar" 
-                        onclick="location.href='../index.php?U=true'" />
+                        onclick="location.href='../index.php?route=U'" />
                             
                 </form>
                 
             <div class="row">
-                <div class="col-2 offset-5 text-center mt-5 py-3  bg-primary rounded-pill">
-                    <a class="text-white" href="../index.php?U=true">Volver</a>
+                <div class="col-2 offset-5 text-center mt-5 bg-primary rounded-pill">
+                    <a class="text-white d-block py-3" href="../index.php?route=U">Volver</a>
                 </div>
             </div>
 

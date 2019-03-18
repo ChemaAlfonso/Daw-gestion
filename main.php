@@ -2,7 +2,7 @@
     <div class="row text-center mt-5">
 
         <div class="col-12 col-lg-4 my-4">
-            <a href="index.php?C=true" class="d-block">
+            <a href="index.php?route=C" class="d-block">
 
                 <i class="far fa-address-card display-1 mb-3 shadowed thumbnail"></i>
             
@@ -16,7 +16,7 @@
         </div>
 
         <div class="col-12 col-lg-4 my-4">
-            <a href="index.php?P=true" class="d-block">
+            <a href="index.php?route=P" class="d-block">
 
                 <i class="fas fa-box-open display-1 mb-3 shadowed thumbnail"></i>
 
@@ -30,7 +30,7 @@
         </div>
 
         <div class="col-12 col-lg-4 my-4">
-            <a  href="index.php?PROV=true" class="d-block">
+            <a  href="index.php?route=PROV" class="d-block">
 
                 <i class="fas fa-truck display-1 mb-3 shadowed thumbnail"></i>
                 
@@ -44,7 +44,7 @@
         </div>
         
         <div class="col-12 col-lg-4 my-4">
-            <a href="index.php?U=true" class="d-block">
+            <a href="index.php?route=U" class="d-block">
                 
                 <i class="fas fa-users display-1 mb-3 shadowed thumbnail"></i>
                 

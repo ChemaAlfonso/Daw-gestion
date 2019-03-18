@@ -112,13 +112,13 @@ if ($option == MODIFICAR)
                     class="btn btn-danger" 
                     value="Cancelar" 
                     role="button"
-                    onclick="location.href='../index.php?C=true'" />
+                    onclick="location.href='../index.php?route=C'" />
                     
                 </form>
                 
                 <div class="row">
-                    <div class="col-2 offset-5 text-center mt-5 py-3  bg-primary rounded-pill">
-                        <a class="text-white" href="../index.php?C=true">Volver</a>
+                    <div class="col-2 offset-5 text-center mt-5 bg-primary rounded-pill">
+                        <a class="text-white d-block py-3" href="../index.php?route=C">Volver</a>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,7 @@
             <form action="login/register_c.php" method="post">
             
                 <div class="form-group">
-                    <label>Usuario/Email <span class="text-danger">*</span></label>
+                    <label>Usuario <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" name="usuario" required />
                 </div>
                     

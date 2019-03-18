@@ -7,7 +7,8 @@
 
 ## Nuevos cambios
 
-- Corrección redireccionamiento nuevas thumbs
+- Links de volver expandidos para mayor accesibilidad.
+- Corrección redireccionamiento nuevas thumbs.
 
                     +++++
                     

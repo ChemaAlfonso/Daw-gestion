@@ -4,15 +4,18 @@ class Router {
 
     public $destRoute;
     public $home;
-
+    public $err;
 
     public function __construct( $route, $usr = false ){
 
-        //Pagina de inicio
-        $this->home = 'main.php';
-      
+        //Seteo página de inicio
+        $this->setHome( 'main.php' );
+
+        //Seteo página de error
+        $this->setError( 'shared/error.php' );
+        
         //Login y registro de usuario
-        if ( empty($usr) && empty($_GET['reg']) )
+        if ( empty( $usr ) && empty( $_GET['reg'] ) )
         {
             $this->setdestRoute('login/login.php');
             $this->goToPage( $this->destRoute );
@@ -22,10 +25,10 @@ class Router {
             $this->setdestRoute('login/register.php');
             $this->goToPage( $this->destRoute );
         }
-        elseif ( isset($_GET['route']) ){
+        elseif ( isset( $_GET['route'] ) ){
 
             //Rutas de la App
-            switch ($route){
+            switch ( $route ){
 
                 case 'P':
                 $this->setdestRoute('productos/productos.php');
@@ -56,16 +59,28 @@ class Router {
 
     } 
 
-    public function setMain( $main ){
-        $this->main = $main;
+    public function setHome( $home ){
+        $this->home = $home;
     }
 
+    public function setError( $err ){
+        $this->err = $err;
+    }
+
+    public function getError(){
+        return $this->err;
+    }
     public function setdestRoute( $destRoute ){
         $this->destRoute = $destRoute;
     }
 
     public function goToPage( $src ){
-        require_once $src;
+
+        if ( is_file( $src ) ){
+            require_once $src;
+        } else {
+            require_once ($this->err);
+        }
     }
 
 }

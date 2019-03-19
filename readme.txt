@@ -7,19 +7,11 @@
 
 ## Nuevos cambios
 
-- Añadido autoloader.
-- Creada clase Routes para manejo de rutas.
-- Implementado sistema de rutas.
-- Creada carpeta shared con modulos compartidos de la app.
-- Validacion de navegadores ( chrome, firefox y edge ) en mainScripts.js.
-- Expandidos botones atras de paginas de editar producto.
-- Alineacion vertical añadida a tablas.
-- Correcion posicionamiento iconos de modificado y borrar en multilinea.
-- ( DEV ) Añadidos registros de prueba para todas las categorias ( Ahora solo hay que crear el usuario ).
-- Unset de variables de sesion no finalizadas.
-- Modificación código en productos ( antes cod_proveedor ahora cod_ producto ).
-- Modificacion posicion nombre y proveedor en tabla productos.
-- Añadida etiqueta de footer.
+- Creado .htaccess para urls amigables.
+- Modificacion seHome().
+- Creada página de error 404.
+
+
 
 
                     +++ 1 +++
@@ -86,3 +78,21 @@
 - Mejoras de legibilidad de código.
 - Links de volver expandidos para mayor accesibilidad.
 - Corrección redireccionamiento nuevas thumbs.
+
+
+
+                    +++ 5 +++
+                  
+- Añadido autoloader.
+- Creada clase Routes para manejo de rutas.
+- Implementado sistema de rutas.
+- Creada carpeta shared con modulos compartidos de la app.
+- Validacion de navegadores ( chrome, firefox y edge ) en mainScripts.js.
+- Expandidos botones atras de paginas de editar producto.
+- Alineacion vertical añadida a tablas.
+- Correcion posicionamiento iconos de modificado y borrar en multilinea.
+- ( DEV ) Añadidos registros de prueba para todas las categorias ( Ahora solo hay que crear el usuario ).
+- Unset de variables de sesion no finalizadas.
+- Modificación código en productos ( antes cod_proveedor ahora cod_ producto ).
+- Modificacion posicion nombre y proveedor en tabla productos.
+- Añadida etiqueta de footer.

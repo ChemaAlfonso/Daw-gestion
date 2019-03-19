@@ -1,0 +1,17 @@
+# opciones de enlaces
+Options +FollowSymlinks
+
+# activavcion del archivo
+RewriteEngine On
+
+# Ruta base
+RewriteBase /master-php/daw/programacion/2daEvaluacion/gestionDeProductos/
+
+# si es un directorio
+RewriteCond %{SCRIPT_FILENAME} !-d
+
+# si es un archivo
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+# Condicion de registro
+RewriteRule ^(.*)$ index.php?route=$1 [L]

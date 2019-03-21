@@ -7,7 +7,7 @@
 
 ## Nuevos cambios
 
-- Creado .htaccess para urls amigables.
+- Creado .htaccess para urls amigables. ( Ahora se debe modificar la ruta base en .htaccess ).
 - Modificacion seHome().
 - Creada página de error 404.
 
